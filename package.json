@@ -1,0 +1,28 @@
+{
+  "name": "ExpressIM",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs": "apidoc -i ./IMRouter -o ./IMWeb/docs",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.7",
+    "socket.io": "^2.3.0",
+    "ws": "^7.2.3"
+  },
+  "apidoc": {
+    "name": "聊天室",
+    "version": "0.1.0",
+    "description": "apiDoc 聊天室接口文档",
+    "title": "聊天室接口文档"
+  }
+}

@@ -1,0 +1,110 @@
+ /********* 聊天盒子******* */
+ .box {
+    width: 1024px;
+    height: 600px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+}
+
+.chat-box {
+    width: 900px;
+    height: 400px;
+    overflow-y: auto;
+    overflow-x:hidden;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 1px solid #ccc;
+}
+
+.chat-item {
+    display: flex;
+    width: 880px;
+    justify-content: flex-start;
+    margin: 10px;
+
+}
+
+
+.chat-item img {
+    width: 46px;
+    height: 46px;
+    vertical-align: middle;
+}
+
+.chatmessage-box {
+    max-width: 260px;
+    border-radius: 5px;
+    padding: 8px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 25px;
+    margin: 0 15px;
+}
+
+.left .chatmessage-box {
+    background: #c1c1c1;
+}
+
+.right .chatmessage-box {
+    background: #9acd32;
+    border: 1px solid #9acd32;
+}
+
+.right {
+    flex-direction: row-reverse;
+}
+
+.left em {
+    position: absolute;
+    top: 14px;
+    left: -16px;
+    width: 0;
+    height: 0;
+    border: 8px solid #000;
+    border-color: transparent #c1c1c1 transparent transparent;
+}
+
+.right em {
+    position: absolute;
+    top: 14px;
+    right: -17px;
+    width: 0;
+    height: 0;
+    border: 8px solid #000;
+    border-color: transparent transparent transparent #9acd32;
+}
+
+.sendmessage {
+    width: 240px;
+    height: 90px;
+    margin: 0 60px;
+
+
+}
+
+.sendmessage textarea {
+    display: block;
+    width: 900px;
+    height: 90px;
+    border: 1px solid #ccc;
+    resize: none;
+    padding: 12px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.btnsendmessage {
+    width: 900px;
+    height: 44px;
+    background:#17a2b8;
+    /* background: #fb7200; */
+    text-align: center;
+    line-height: 44px;
+    margin: 20px 60px;
+    color: #fff;
+}
