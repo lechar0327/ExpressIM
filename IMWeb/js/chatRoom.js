@@ -1,7 +1,7 @@
 $(function () {
     //连接socketio
-    const socket = io("http://localhost:3000");
-
+    // const socket = io("http://localhost:3000");
+    const socket = io();
     var token = $.cookie("im-token");
     if (token) {
         $.ajax({
@@ -13,24 +13,29 @@ $(function () {
             },
             data: {},
             success: function (res) {
+                if (res.code == 0) {
+                    $(".btnsendmessage").click(function () {
+                        var content = $("#txtContent").val();
 
-                $(".btnsendmessage").click(function () {
-                    var content = $("#txtContent").val();
+                        if (content.length == 0) {
+                            return;
+                        }
 
-                    if (content.length == 0) {
-                        return;
-                    }
+                        socket.emit("message", {
+                            message: content
+                        });
 
-                    socket.emit("message", {
-                        message: content
+                        addMessage("right", content);
+
+                        $("#txtContent").val('');
                     });
 
-                    addMessage("right", content);
+                    socketIO(res.data.username)
+                }
+                else {
+                    window.location.href = '/login.html';
+                }
 
-                    $("#txtContent").val('');
-                });
-
-                socketIO(res.data.username)
             }
         });
     }

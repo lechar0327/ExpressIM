@@ -9,6 +9,11 @@ const socketIo = require('socket.io');
 //引入express-async-errors
 require('express-async-errors');
 
+//配置环境变量
+const dotenv = require('dotenv')
+// dotenv 配置
+dotenv.config()
+
 //引入用户信息路由模块
 const userRouters = require("./IMRouter/UserRouter");
 //引入首页路由模块
